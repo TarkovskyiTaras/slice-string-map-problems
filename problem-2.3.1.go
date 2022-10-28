@@ -9,18 +9,18 @@ firstLast6([6, 1, 2, 3]) → true
 firstLast6([13, 6, 1, 2, 3]) → false
 */
 
-const x = 4
+const length = 6
 
-func firstLast6(a [x]int) bool {
-	if a[0] == 6 || a[len(a)-1] == 6 {
+func firstLast6(givenArray [length]int) bool {
+	lastIndex := len(givenArray) - 1
+	if givenArray[0] == 6 || givenArray[lastIndex] == 6 {
 		return true
 	}
 	return false
 }
 
 func main() {
-	givenArray1 := [x]int{6, 1, 6, 4}
-	fmt.Println(firstLast6(givenArray1))
+	fmt.Println(firstLast6([length]int{2, 3, 4, 22, 14, 6})) //true
 }
 
 //package main
