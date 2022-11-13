@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"log"
 )
 
 /*
@@ -12,32 +11,18 @@ commonEnd([1, 2, 3], [7, 3, 2]) → false
 commonEnd([1, 2, 3], [1, 3]) → true
 */
 
-func twoSlicesOfSameLengthChecker(sliceOne []int, sliceTwo []int) bool {
-	if len(sliceOne) == len(sliceTwo) {
-		return true
-	} else {
-		return false
-	}
-}
-
-func firstOrLastElementChecker(sliceOne []int, sliceTwo []int) bool {
-	lastIndex := len(sliceOne) - 1
-	if sliceOne[0] == sliceTwo[0] || sliceOne[lastIndex] == sliceTwo[lastIndex] {
-		return true
-	} else {
-		return false
-	}
-}
-
 func commonFirstOrLastElement(sliceOne []int, sliceTwo []int) bool {
-	if twoSlicesOfSameLengthChecker(sliceOne, sliceTwo) == false {
-		log.Fatal("entered slices in the arguments have different length")
+	lastIndexSliceOne := len(sliceOne) - 1
+	lastIndexSliceTwo := len(sliceTwo) - 1
+	if sliceOne[0] == sliceTwo[0] || sliceOne[lastIndexSliceOne] == sliceTwo[lastIndexSliceTwo] {
+		return true
+	} else {
+		return false
 	}
-	return firstOrLastElementChecker(sliceOne, sliceTwo)
 }
 
 func main() {
-	fmt.Println(commonFirstOrLastElement([]int{1, 3, 4}, []int{1, 3, 4}))
+	fmt.Println(commonFirstOrLastElement([]int{1, 3, 4}, []int{2, 44, 3, -1, 4})) //true
 }
 
 //package main

@@ -12,13 +12,16 @@ func TestCommonFirstOrLastEl(t *testing.T) {
 
 	tests := []testData{
 		{givenSliceOne: []int{1, 3, 5},
-			givenSliceTwo: []int{1, 4, 6},
+			givenSliceTwo: []int{1, 4, -5, 6},
 			want:          true},
 		{givenSliceOne: []int{2, 3, 6},
-			givenSliceTwo: []int{1, 4, 6},
+			givenSliceTwo: []int{1, 4, -2, 6},
+			want:          true},
+		{givenSliceOne: []int{22, -3, 56},
+			givenSliceTwo: []int{22, 992, -12, 56},
 			want:          true},
 		{givenSliceOne: []int{2, 3, 4},
-			givenSliceTwo: []int{5, 6, 7},
+			givenSliceTwo: []int{5, 6, -9, 7},
 			want:          false},
 	}
 
